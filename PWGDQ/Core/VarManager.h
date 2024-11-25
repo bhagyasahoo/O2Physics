@@ -725,7 +725,6 @@ class VarManager : public TObject
     kNCorrelationVariables,
 
     //MC particle pair Variables
-
     kMCCosThetaHE,
     kMCCosThetaCS,
     kMCPhiHE,
