@@ -209,6 +209,16 @@ MCSignal* o2::aod::dqmcsignals::GetMCSignal(const char* name)
     signal = new MCSignal(name, "Bc", {prong}, {-1});
     return signal;
   }
+  if (!nameStr.compare("mumuFromJpsi1prong")) {
+    MCProng prong(1, {13, 443}, {true, true}, {false, false}, {0, 0}, {0, 0}, {false, false});
+    signal = new MCSignal(name, "mumu pairs from jpsi decays", {prong}, {-1});
+    return signal;
+  }
+  if (!nameStr.compare("mumuFromJpsi2prong")) {
+    MCProng prong(1, {13, 443}, {true, true}, {false, false}, {0, 0}, {0, 0}, {false, false});
+    signal = new MCSignal(name, "mumu pairs from jpsi decays", {prong, prong}, {1, 1});
+    return signal;
+  }
   if (!nameStr.compare("mumuFromJpsiFromBc")) {
     MCProng prong(3, {13, 443, 541}, {true, true, true}, {false, false, false}, {0, 0, 0}, {0, 0, 0}, {false, false, false});
     signal = new MCSignal(name, "Muon pair from jpsi from Bc decays", {prong, prong}, {1, 1});
